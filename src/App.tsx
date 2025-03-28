@@ -15,6 +15,33 @@ import {
   Building2
 } from 'lucide-react';
 
+import { 
+  FaReact, 
+  FaJs, 
+  FaNodeJs,
+  FaPython 
+} from 'react-icons/fa';
+import { 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiFastapi, 
+  SiFlask,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiAngular,
+  SiFirebase
+} from 'react-icons/si';
+
+function TechCard({ icon: Icon, name, color }: { icon: React.ElementType; name: string; color: string }) {
+  return (
+    <div className="tech-card p-4 bg-[#1A1A1B] rounded-lg border border-gray-800 flex flex-col items-center justify-center gap-3 hover:bg-[#252525] transition-colors">
+      <Icon className={`w-8 h-8 ${color}`} />
+      <p className="text-center">{name}</p>
+    </div>
+  );
+}
+
 function App() {
   const [formData, setFormData] = useState({
     name: '',
@@ -35,7 +62,7 @@ function App() {
       <nav className="fixed w-full top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <a href="#" className="text-2xl font-bold">
-            <span className="text-purple-400">AK</span>
+            <span className="text-purple-400">kraglen</span>
           </a>
           <div className="flex space-x-8">
             <a href="#about" className="hover:text-purple-400 transition-colors duration-300">About</a>
@@ -130,7 +157,7 @@ function App() {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-20 px-4" id="skills">
+       <section className="py-20 px-4" id="skills">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-purple-400 text-sm uppercase tracking-wider">MY SKILLS</span>
@@ -146,11 +173,11 @@ function App() {
                 <h3 className="text-xl font-semibold">Frontend</h3>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['React', 'JavaScript', 'TypeScript', 'Angular', 'Tailwind CSS'].map((tech) => (
-                  <div key={tech} className="tech-card p-4 bg-[#1A1A1B] rounded-lg border border-gray-800">
-                    <p className="text-center">{tech}</p>
-                  </div>
-                ))}
+                <TechCard icon={FaReact} name="React" color="text-[#61DAFB]" />
+                <TechCard icon={FaJs} name="JavaScript" color="text-[#F7DF1E]" />
+                <TechCard icon={SiTypescript} name="TypeScript" color="text-[#3178C6]" />
+                <TechCard icon={SiAngular} name="Angular" color="text-[#DD0031]" />
+                <TechCard icon={SiTailwindcss} name="Tailwind CSS" color="text-[#06B6D4]" />
               </div>
             </div>
 
@@ -161,11 +188,10 @@ function App() {
                 <h3 className="text-xl font-semibold">Backend</h3>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Python', 'Node.js', 'FastAPI', 'Flask'].map((tech) => (
-                  <div key={tech} className="tech-card p-4 bg-[#1A1A1B] rounded-lg border border-gray-800">
-                    <p className="text-center">{tech}</p>
-                  </div>
-                ))}
+                <TechCard icon={FaPython} name="Python" color="text-[#FFD43B]" />
+                <TechCard icon={FaNodeJs} name="Node.js" color="text-[#339933]" />
+                <TechCard icon={SiFastapi} name="FastAPI" color="text-[#009688]" />
+                <TechCard icon={SiFlask} name="Flask" color="text-white" />
               </div>
             </div>
 
@@ -176,11 +202,10 @@ function App() {
                 <h3 className="text-xl font-semibold">Database</h3>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'].map((tech) => (
-                  <div key={tech} className="tech-card p-4 bg-[#1A1A1B] rounded-lg border border-gray-800">
-                    <p className="text-center">{tech}</p>
-                  </div>
-                ))}
+                <TechCard icon={SiMongodb} name="MongoDB" color="text-[#47A248]" />
+                <TechCard icon={SiPostgresql} name="PostgreSQL" color="text-[#336791]" />
+                <TechCard icon={SiMysql} name="MySQL" color="text-[#4479A1]" />
+                <TechCard icon={SiFirebase} name="Firebase" color="text-[#FFCA28]" />
               </div>
             </div>
           </div>
