@@ -713,7 +713,7 @@ function App() {
       >
         <div className="overflow-hidden">
           <img 
-            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_crop,q_80,f_auto/v1743257182/pablos-therapy_olhcye.png"
+            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_fit,q_80,f_auto/v1743257182/pablos-therapy_olhcye.png"
             alt="Pablo's Therapy App"
             className="project-image w-full h-48 object-cover"
           />
@@ -745,7 +745,7 @@ function App() {
       >
         <div className="overflow-hidden">
           <img 
-            src="https://res.cloudinary.com/dninix0mh/image/upload/f_auto,c_crop,w_800,q_80/v1743256306/Screenshot_2025-03-29_at_9.21.19_AM_pdiwow.png"
+            src="https://res.cloudinary.com/dninix0mh/image/upload/f_auto,c_fit,w_800,q_80/v1743256306/Screenshot_2025-03-29_at_9.21.19_AM_pdiwow.png"
             alt="Career Connect"
             className="project-image w-full h-48 object-cover"
           />
@@ -778,7 +778,7 @@ function App() {
       >
         <div className="overflow-hidden">
           <img 
-            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_crop,q_80,f_auto/v1743256662/redis_lmofbd.jpg"
+            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_fit,q_80,f_auto/v1743256662/redis_lmofbd.jpg"
             alt="Redis - Python"
             className="project-image w-full h-48 object-cover"
           />
