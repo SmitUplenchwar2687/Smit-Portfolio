@@ -21,7 +21,9 @@ import {
 import { 
   FaReact, 
   FaNodeJs,
-  FaPython 
+  FaPython,
+  FaAws,
+  FaDocker 
 } from 'react-icons/fa';
 import { 
   SiTypescript,  
@@ -32,10 +34,8 @@ import {
   SiMysql,
   SiAngular,
   SiFirebase,
-  SiAmazonaws, 
-  SiDocker, 
-  SiKubernetes, 
-  SiApachekafka 
+  SiKubernetes,
+  SiGooglecloud
 } from 'react-icons/si';
 
 import { 
@@ -458,7 +458,7 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <TechCard icon={SiAmazonaws} name="AWS" color="text-[#FF9900]" />
+            <TechCard icon={FaAws} name="AWS" color="text-[#FF9900]" />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 10 }} 
@@ -466,7 +466,7 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <TechCard icon={SiDocker} name="Docker" color="text-[#2496ED]" />
+            <TechCard icon={SiGooglecloud} name="GCP" color="text-[#4285F4]" />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 10 }} 
@@ -482,7 +482,7 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <TechCard icon={SiApachekafka} name="Kafka" color="text-[#231F20]" />
+            <TechCard icon={FaDocker} name="Docker" color="text-[#2496ED]" />
           </motion.div>
         </div>
       </motion.div>
