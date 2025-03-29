@@ -490,7 +490,7 @@ function App() {
   </div>
 </section>
 
-       {/* Work Experience */}
+      {/* Work Experience */}
 <section className="py-20 px-4" id="experience">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12">
@@ -503,394 +503,454 @@ function App() {
 
     <div className="space-y-8">
       {/* o9 Solutions - Software Engineer II */}
-      <div className="flex gap-6">
-        <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <Building2 className="w-6 h-6 text-purple-400" />
-        </div>
-        <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
-          <div className="flex justify-between items-start mb-4">
-            <div>
-              <h3 className="text-xl font-semibold">Software Engineer II</h3>
-              <p className="text-gray-400">o9 Solutions</p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <div className="flex gap-6">
+          <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
+            <Building2 className="w-6 h-6 text-purple-400" />
+          </div>
+          <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="text-xl font-semibold">Software Engineer II</h3>
+                <p className="text-gray-400">o9 Solutions</p>
+              </div>
+              <span className="text-sm text-purple-400">Feb 2024 – Aug 2024</span>
             </div>
-            <span className="text-sm text-purple-400">Feb 2024 – Aug 2024</span>
-          </div>
-          <ul className="space-y-3 text-gray-400">
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Developed React (Tailwind CSS) components for real-time data analytics UIs, improving user experience by 25%.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Led full-stack enhancements using Node.js (TypeScript), Python, Flask, and AWS services (EC2, Lambda, S3),
-                reducing deployment overhead by 30%.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Optimized MySQL/PostgreSQL queries for a 40% performance boost, ensuring scalable data handling for 300+ global
-                clients.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Containerized microservices using Docker and orchestrated them with Kubernetes, enabling faster prototyping.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Enhanced supply chain software using PostgreSQL and AWS Lambda, improving query efficiency by 30%.
-              </span>
-            </li>
-          </ul>
-          <div className="flex flex-wrap gap-2 mt-4">
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">React</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MySQL</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">PostgreSQL</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Docker</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Kubernetes</span>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Developed React (Tailwind CSS) components for real-time data analytics UIs, improving user experience by 25%.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Led full-stack enhancements using Node.js (TypeScript), Python, Flask, and AWS services (EC2, Lambda, S3),
+                  reducing deployment overhead by 30%.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Optimized MySQL/PostgreSQL queries for a 40% performance boost, ensuring scalable data handling for 300+ global
+                  clients.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Containerized microservices using Docker and orchestrated them with Kubernetes, enabling faster prototyping.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Enhanced supply chain software using PostgreSQL and AWS Lambda, improving query efficiency by 30%.
+                </span>
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-2 mt-4">
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">React</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MySQL</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">PostgreSQL</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Docker</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Kubernetes</span>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* o9 Solutions - Software Engineer */}
-      <div className="flex gap-6">
-        <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <Building2 className="w-6 h-6 text-purple-400" />
-        </div>
-        <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
-          <div className="flex justify-between items-start mb-4">
-            <div>
-              <h3 className="text-xl font-semibold">Software Engineer</h3>
-              <p className="text-gray-400">o9 Solutions</p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="flex gap-6">
+          <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
+            <Building2 className="w-6 h-6 text-purple-400" />
+          </div>
+          <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="text-xl font-semibold">Software Engineer</h3>
+                <p className="text-gray-400">o9 Solutions</p>
+              </div>
+              <span className="text-sm text-purple-400">Feb 2022 – Feb 2024</span>
             </div>
-            <span className="text-sm text-purple-400">Feb 2022 – Feb 2024</span>
-          </div>
-          <ul className="space-y-3 text-gray-400">
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Contributed to multiple full-stack projects leveraging React, Node.js, Python, and Flask, delivering 12+ new
-                features across 4 microservices and impacting 200K+ daily active users.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Designed serverless architectures with AWS Lambda, reducing deployment time by 40% and cutting the total
-                monthly cloud costs by 25%.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Implemented real-time pipelines handling 1M+ daily transactions via Apache Kafka and Snowflake, improving
-                data throughput by 30%.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Collaborated closely with mentors to troubleshoot 50+ critical issues, prioritize technical debt, and
-                adopt best practices, achieving a 95% on-time feature delivery rate.
-              </span>
-            </li>
-          </ul>
-          <div className="flex flex-wrap gap-2 mt-4">
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">React</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">AWS Lambda</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Kafka</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Snowflake</span>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Contributed to multiple full-stack projects leveraging React, Node.js, Python, and Flask, delivering 12+ new
+                  features across 4 microservices and impacting 200K+ daily active users.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Designed serverless architectures with AWS Lambda, reducing deployment time by 40% and cutting the total
+                  monthly cloud costs by 25%.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Implemented real-time pipelines handling 1M+ daily transactions via Apache Kafka and Snowflake, improving
+                  data throughput by 30%.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Collaborated closely with mentors to troubleshoot 50+ critical issues, prioritize technical debt, and
+                  adopt best practices, achieving a 95% on-time feature delivery rate.
+                </span>
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-2 mt-4">
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">React</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">AWS Lambda</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Kafka</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Snowflake</span>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Tegasys Solutions - Software Engineering Intern */}
-      <div className="flex gap-6">
-        <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <Building2 className="w-6 h-6 text-purple-400" />
-        </div>
-        <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
-          <div className="flex justify-between items-start mb-4">
-            <div>
-              <h3 className="text-xl font-semibold">Software Engineering Intern</h3>
-              <p className="text-gray-400">Tegasys Solutions</p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <div className="flex gap-6">
+          <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
+            <Building2 className="w-6 h-6 text-purple-400" />
+          </div>
+          <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="text-xl font-semibold">Software Engineering Intern</h3>
+                <p className="text-gray-400">Tegasys Solutions</p>
+              </div>
+              <span className="text-sm text-purple-400">Jul 2021 – Nov 2021</span>
             </div>
-            <span className="text-sm text-purple-400">Jul 2021 – Nov 2021</span>
-          </div>
-          <ul className="space-y-3 text-gray-400">
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Developed Node.js and Flask web services deployed on AWS, reducing latency by 35% through optimized MySQL usage.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Containerized .NET microservices using Docker and established CI/CD pipelines to improve release speed by
-                50%, reducing average build time from 30 minutes to 15 minutes.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
-              <span>
-                Demonstrated strong communication skills during Agile stand-ups, ensuring alignment on project timelines
-                and deliverables.
-              </span>
-            </li>
-          </ul>
-          <div className="flex flex-wrap gap-2 mt-4">
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MySQL</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Docker</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">.NET</span>
-            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Developed Node.js and Flask web services deployed on AWS, reducing latency by 35% through optimized MySQL usage.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Containerized .NET microservices using Docker and established CI/CD pipelines to improve release speed by
+                  50%, reducing average build time from 30 minutes to 15 minutes.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2" />
+                <span>
+                  Demonstrated strong communication skills during Agile stand-ups, ensuring alignment on project timelines
+                  and deliverables.
+                </span>
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-2 mt-4">
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MySQL</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Docker</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">.NET</span>
+              <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
+
     </div>
   </div>
 </section>
 
-
       {/* Featured Projects */}
-      <section className="py-20 px-4 bg-[#0D0D0E]" id="projects">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-purple-400 text-sm uppercase tracking-wider">MY WORK</span>
-            <h2 className="text-4xl font-bold mt-2">Featured Projects</h2>
-            <p className="text-gray-400 mt-4">A collection of projects that showcase my skills and experience in building digital products.</p>
+<section className="py-20 px-4 bg-[#0D0D0E]" id="projects">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12">
+      <span className="text-purple-400 text-sm uppercase tracking-wider">MY WORK</span>
+      <h2 className="text-4xl font-bold mt-2">Featured Projects</h2>
+      <p className="text-gray-400 mt-4">
+        A collection of projects that showcase my skills and experience in building digital products.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Project 1 */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800"
+      >
+        <div className="overflow-hidden">
+          <img 
+            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_crop,q_80,f_auto/v1743257182/pablos-therapy_olhcye.png"
+            alt="Pablo's Therapy App"
+            className="project-image w-full h-48 object-cover"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">Pablo's Therapy App</h3>
+          <p className="text-gray-400 mb-4">
+            An interactive mobile app designed to provide mental wellness support through conversations with an AI therapist.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flutter</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Dart</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MongoDB</span>
+          </div>
+          <a href="https://github.com/SmitUplenchwar2687/Pablo-s-Therapy" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
+            View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Project 2 */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800"
+      >
+        <div className="overflow-hidden">
+          <img 
+            src="https://res.cloudinary.com/dninix0mh/image/upload/f_auto,c_crop,w_800,q_80/v1743256306/Screenshot_2025-03-29_at_9.21.19_AM_pdiwow.png"
+            alt="Career Connect"
+            className="project-image w-full h-48 object-cover"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">Career Connect</h3>
+          <p className="text-gray-400 mb-4">
+            A full-stack web application designed to streamline job postings, user profile management, and job applications.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">React</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Typescript</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Express</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MongoDB</span>
+          </div>
+          <a href="https://github.com/SmitUplenchwar2687/Career-Connect-Platform" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
+            View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Project 3 */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800"
+      >
+        <div className="overflow-hidden">
+          <img 
+            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_crop,q_80,f_auto/v1743256662/redis_lmofbd.jpg"
+            alt="Redis - Python"
+            className="project-image w-full h-48 object-cover"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">Redis - Python</h3>
+          <p className="text-gray-400 mb-4">
+            A lightweight implementation of a Redis-like in-memory data store in Python.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+            <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Asyncio</span>
+          </div>
+          <a href="https://github.com/SmitUplenchwar2687/Redis-Clone" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
+            View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+{/* Contact Section */}
+<section className="py-20 px-4 bg-[#0D0D0E]" id="contact">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12">
+      <span className="text-purple-400 text-sm uppercase tracking-wider">CONTACT</span>
+      <h2 className="text-4xl font-bold mt-2">Get In Touch</h2>
+      <p className="text-gray-400 mt-4">
+        Have a project in mind or want to collaborate? Feel free to reach out!
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* Left Side - Contact Details */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+        <p className="text-gray-400 mb-8">
+          I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        </p>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center">
+              <Mail className="w-6 h-6 text-purple-400" />
+            </div>
+            <div>
+              <p className="font-semibold">Email</p>
+              <p className="text-gray-400">smituplenchwar02@gmail.com</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Project 1 */}
-            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
-              <div className="overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-                  alt="A2K Financial Advisory"
-                  className="project-image w-full h-48 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">A2K Financial Advisory</h3>
-                <p className="text-gray-400 mb-4">An AI-powered financial advisory platform offering spending insights, savings projections, and chatbot-driven advice.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MERN Stack</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Git</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Google Gemini</span>
-                </div>
-                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
-                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center">
+              <Phone className="w-6 h-6 text-purple-400" />
             </div>
-
-            {/* Project 2 */}
-            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
-              <div className="overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800"
-                  alt="Donezo"
-                  className="project-image w-full h-48 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Donezo</h3>
-                <p className="text-gray-400 mb-4">A full-stack collaborative task management platform with role-based access control.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MERN Stack</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Git</span>
-                </div>
-                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
-                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+            <div>
+              <p className="font-semibold">Phone</p>
+              <p className="text-gray-400">+1 (716)-339-4309</p>
             </div>
+          </div>
 
-            {/* Project 3 */}
-            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
-              <div className="overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1537884944318-390069bb8665?auto=format&fit=crop&q=80&w=800"
-                  alt="FormUp"
-                  className="project-image w-full h-48 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">FormUp - Form Builder</h3>
-                <p className="text-gray-400 mb-4">A drag-and-drop form builder for creating dynamic, customizable forms with real-time preview.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Next.js</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Dnd-Kit</span>
-                </div>
-                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
-                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-purple-400" />
+            </div>
+            <div>
+              <p className="font-semibold">Location</p>
+              <p className="text-gray-400">New York, USA</p>
             </div>
           </div>
         </div>
-      </section>
 
-
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-[#0D0D0E]" id="contact">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-purple-400 text-sm uppercase tracking-wider">CONTACT</span>
-            <h2 className="text-4xl font-bold mt-2">Get In Touch</h2>
-            <p className="text-gray-400 mt-4">Have a project in mind or want to collaborate? Feel free to reach out!</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
-              <p className="text-gray-400 mb-8">
-                I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Email</p>
-                    <p className="text-gray-400">smituplenchwar02@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Phone</p>
-                    <p className="text-gray-400">+1 (716)-339-4309</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Location</p>
-                    <p className="text-gray-400">New York, USA</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <h4 className="font-semibold mb-4">Follow Me</h4>
-                <div className="flex gap-4">
-                  <a href="https://github.com/SmitUplenchwar2687" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
-                    <Github className="w-6 h-6" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/smit-uplenchwar-41b473219/" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                  <a href="https://www.instagram.com/smit2687_/" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
-                    <Instagram className="w-6 h-6" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
-                      placeholder="Your email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
-                    placeholder="Subject of your message"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    rows={6}
-                    className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
-                    placeholder="Your message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  ></textarea>
-                </div>
-
-                {status.error && (
-          <div className="text-red-500 text-sm">{status.error}</div>
-        )}
-        
-        {status.success && (
-          <div className="text-green-500 text-sm">Message sent successfully!</div>
-        )}
-
-
-        <button
-          type="submit"
-          disabled={status.submitting}
-          className={`primary-button w-full py-3 bg-purple-600 rounded-lg ${
-            status.submitting 
-              ? 'opacity-50 cursor-not-allowed' 
-              : 'hover:bg-purple-700'
-          }`}
-        >
-          {status.submitting ? 'Sending...' : 'Send Message'}
-        </button>
-              </form>
-            </div>
+        <div className="mt-8">
+          <h4 className="font-semibold mb-4">Follow Me</h4>
+          <div className="flex gap-4">
+            <a href="https://github.com/SmitUplenchwar2687" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
+              <Github className="w-6 h-6" />
+            </a>
+            <a href="https://www.linkedin.com/in/smit-uplenchwar-41b473219/" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="https://www.instagram.com/smit2687_/" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
+              <Instagram className="w-6 h-6" />
+            </a>
           </div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Right Side - Contact Form */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
+                placeholder="Your email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
+              placeholder="Subject of your message"
+              value={formData.subject}
+              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+            <textarea
+              id="message"
+              rows={6}
+              className="form-input w-full px-4 py-2 bg-[#1A1A1B] rounded-lg border border-gray-800"
+              placeholder="Your message"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            ></textarea>
+          </div>
+
+          {status.error && (
+            <div className="text-red-500 text-sm">{status.error}</div>
+          )}
+
+          {status.success && (
+            <div className="text-green-500 text-sm">Message sent successfully!</div>
+          )}
+
+          <button
+            type="submit"
+            disabled={status.submitting}
+            className={`primary-button w-full py-3 bg-purple-600 rounded-lg ${
+              status.submitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-purple-700'
+            }`}
+          >
+            {status.submitting ? 'Sending...' : 'Send Message'}
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* Footer Section */}
 <footer className="mt-20 py-10 px-4 bg-[#111111] text-white border-t border-gray-800">
