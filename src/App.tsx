@@ -713,7 +713,7 @@ function App() {
       >
         <div className="overflow-hidden">
           <img 
-            src="https://res.cloudinary.com/dninix0mh/image/upload/w_800,c_fit,q_80,f_auto/v1743257182/pablos-therapy_olhcye.png"
+            src="https://res.cloudinary.com/dninix0mh/image/upload/f_auto,c_fill,q_auto:best,w_800/v1743257182/pablos-therapy_olhcye.png"
             alt="Pablo's Therapy App"
             className="project-image w-full h-48 object-cover"
           />
