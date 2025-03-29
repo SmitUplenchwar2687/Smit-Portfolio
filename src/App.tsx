@@ -14,24 +14,29 @@ import {
   Phone,
   MapPin,
   Code,
-  Building2
+  Building2,
+  ServerCog
 } from 'lucide-react';
 
 import { 
   FaReact, 
-  FaJs, 
   FaNodeJs,
   FaPython 
 } from 'react-icons/fa';
 import { 
   SiTypescript,  
-  SiFastapi, 
-  SiFlask,
+  SiNextdotjs,
+  SiGo,
+  SiJava,
   SiMongodb,
   SiPostgresql,
   SiMysql,
   SiAngular,
-  SiFirebase
+  SiFirebase,
+  SiAmazonaws, 
+  SiDocker, 
+  SiKubernetes, 
+  SiApachekafka 
 } from 'react-icons/si';
 
 function TechCard({ icon: Icon, name, color }: { icon: React.ElementType; name: string; color: string }) {
@@ -152,7 +157,7 @@ function App() {
   className="pt-32 pb-20 px-4"
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1.5 }}
+  transition={{ duration: 1.2 }}
 >
   <div className="max-w-7xl mx-auto">
     <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -160,7 +165,7 @@ function App() {
         className="flex-1"
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 1.2 }}
       >
         <div className="inline-block px-4 py-2 rounded-full bg-[#1A1A1B] mb-6 hover:bg-purple-500/10 transition-colors duration-300">
           <span className="flex items-center text-sm">
@@ -202,7 +207,7 @@ function App() {
         className="flex-1 relative"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 1.2 }}
       >
         <div className="w-full aspect-square rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
           <img
@@ -218,87 +223,268 @@ function App() {
 
       {/* Core Competencies */}
       <section className="py-20 px-4 bg-[#0D0D0E]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">Core Competencies</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800">
-              <Code2 className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Frontend Development</h3>
-              <p className="text-gray-400">Building responsive and interactive user interfaces with React, TypeScript, Angular and Next.js.</p>
-            </div>
-            <div className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800">
-              <Server className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Backend Development</h3>
-              <p className="text-gray-400">Creating robust APIs and server-side applications using Node.js, Flask, and Express.</p>
-            </div>
-            <div className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800">
-              <Database className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Database Management</h3>
-              <p className="text-gray-400">Working with SQL and NoSQL databases including PostgreSQL, MongoDB, Firebase and MySQL.</p>
-            </div>
-            <div className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800">
-              <Bot className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">AI & Machine Learning</h3>
-              <p className="text-gray-400">Implementing machine learning models using TensorFlow, PyTorch, and other AI frameworks.</p>
-            </div>
-          </div>
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-3xl font-bold mb-12">Core Competencies</h2>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800"
+      >
+        <Code2 className="w-8 h-8 text-purple-400 mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Frontend Development</h3>
+        <p className="text-gray-400">
+          Building responsive and interactive user interfaces with React, TypeScript, Angular and Next.js.
+        </p>
+      </motion.div>
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800"
+      >
+        <Server className="w-8 h-8 text-purple-400 mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Backend Development</h3>
+        <p className="text-gray-400">
+          Creating robust APIs and server-side applications using Node.js, Flask, Go and Express.
+        </p>
+      </motion.div>
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800"
+      >
+        <Database className="w-8 h-8 text-purple-400 mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Database Management</h3>
+        <p className="text-gray-400">
+          Working with SQL and NoSQL databases including PostgreSQL, MongoDB, Firebase and MySQL.
+        </p>
+      </motion.div>
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="competency-card p-6 rounded-xl bg-[#1A1A1B] border border-gray-800"
+      >
+        <Bot className="w-8 h-8 text-purple-400 mb-4" />
+        <h3 className="text-xl font-semibold mb-2">AI & Machine Learning</h3>
+        <p className="text-gray-400">
+          Implementing machine learning models using TensorFlow, PyTorch, and other AI frameworks.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+{/* Tech Stack */}
+<section className="py-20 px-4" id="skills">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12">
+      <span className="text-purple-400 text-sm uppercase tracking-wider">MY SKILLS</span>
+      <h2 className="text-4xl font-bold mt-2">Tech Stack</h2>
+      <p className="text-gray-400 mt-4">The technologies and tools I use to bring ideas to life</p>
+    </div>
+
+    <div className="space-y-12">
+      {/* Frontend */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex items-center gap-2 mb-6">
+          <Code className="text-purple-400" />
+          <h3 className="text-xl font-semibold">Frontend</h3>
         </div>
-      </section>
-
-      {/* Tech Stack */}
-       <section className="py-20 px-4" id="skills">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-purple-400 text-sm uppercase tracking-wider">MY SKILLS</span>
-            <h2 className="text-4xl font-bold mt-2">Tech Stack</h2>
-            <p className="text-gray-400 mt-4">The technologies and tools I use to bring ideas to life</p>
-          </div>
-
-          <div className="space-y-12">
-            {/* Frontend */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Code className="text-purple-400" />
-                <h3 className="text-xl font-semibold">Frontend</h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <TechCard icon={FaReact} name="React" color="text-[#61DAFB]" />
-                <TechCard icon={FaJs} name="JavaScript" color="text-[#F7DF1E]" />
-                <TechCard icon={SiTypescript} name="TypeScript" color="text-[#3178C6]" />
-                <TechCard icon={SiAngular} name="Angular" color="text-[#DD0031]" />
-              </div>
-            </div>
-
-            {/* Backend */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Server className="text-purple-400" />
-                <h3 className="text-xl font-semibold">Backend</h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <TechCard icon={FaPython} name="Python" color="text-[#FFD43B]" />
-                <TechCard icon={FaNodeJs} name="Node.js" color="text-[#339933]" />
-                <TechCard icon={SiFastapi} name="FastAPI" color="text-[#009688]" />
-                <TechCard icon={SiFlask} name="Flask" color="text-white" />
-              </div>
-            </div>
-
-            {/* Database */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Database className="text-purple-400" />
-                <h3 className="text-xl font-semibold">Database</h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <TechCard icon={SiMongodb} name="MongoDB" color="text-[#47A248]" />
-                <TechCard icon={SiPostgresql} name="PostgreSQL" color="text-[#336791]" />
-                <TechCard icon={SiMysql} name="MySQL" color="text-[#4479A1]" />
-                <TechCard icon={SiFirebase} name="Firebase" color="text-[#FFCA28]" />
-              </div>
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <TechCard icon={FaReact} name="React" color="text-[#61DAFB]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <TechCard icon={SiNextdotjs} name="Next.js" color="text-black" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <TechCard icon={SiTypescript} name="TypeScript" color="text-[#3178C6]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <TechCard icon={SiAngular} name="Angular" color="text-[#DD0031]" />
+          </motion.div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Backend */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="flex items-center gap-2 mb-6">
+          <Server className="text-purple-400" />
+          <h3 className="text-xl font-semibold">Backend</h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <TechCard icon={FaPython} name="Python" color="text-[#FFD43B]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <TechCard icon={FaNodeJs} name="Node.js" color="text-[#339933]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <TechCard icon={SiGo} name="Go" color="text-[#00ADD8]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <TechCard icon={SiJava} name="Java" color="text-[#007396]" />
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Database */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <div className="flex items-center gap-2 mb-6">
+          <Database className="text-purple-400" />
+          <h3 className="text-xl font-semibold">Database</h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <TechCard icon={SiMongodb} name="MongoDB" color="text-[#47A248]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <TechCard icon={SiPostgresql} name="PostgreSQL" color="text-[#336791]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <TechCard icon={SiMysql} name="MySQL" color="text-[#4479A1]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <TechCard icon={SiFirebase} name="Firebase" color="text-[#FFCA28]" />
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Cloud & Systems */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
+        <div className="flex items-center gap-2 mb-6">
+          <ServerCog className="text-blue-400" />
+          <h3 className="text-xl font-semibold">Cloud & Systems</h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <TechCard icon={SiAmazonaws} name="AWS" color="text-[#FF9900]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <TechCard icon={SiDocker} name="Docker" color="text-[#2496ED]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <TechCard icon={SiKubernetes} name="Kubernetes" color="text-[#326CE5]" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <TechCard icon={SiApachekafka} name="Kafka" color="text-[#231F20]" />
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
        {/* Work Experience */}
 <section className="py-20 px-4" id="experience">
