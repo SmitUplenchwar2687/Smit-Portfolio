@@ -79,7 +79,7 @@ function App() {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'smituplenchwar12@gmail.com'
+          to_email: 'smituplenchwar02@gmail.com'
         },
         'mY4T4uoObLyDBbplY' 
       );
@@ -146,7 +146,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4" id="about">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
@@ -169,9 +169,14 @@ function App() {
                 <button className="primary-button px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 flex items-center">
                   View Projects <ArrowRight className="ml-2 w-4 h-4" />
                 </button>
-                <button className="primary-button px-6 py-3 border border-gray-700 rounded-lg hover:bg-gray-800">
-                  Resume
-                </button>
+                <a
+                  href="https://drive.google.com/file/d/1ea5yCsHC2bAHnhvOkjENUMZaIuighlpg/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="primary-button px-6 py-3 border border-gray-700 rounded-lg hover:bg-gray-800 inline-block text-center"
+                    >
+                    Resume
+                </a>
               </div>
             </div>
             <div className="flex-1 relative">
@@ -672,6 +677,97 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Footer Section */}
+<footer className="py-10 px-4 bg-[#0D0D0E] text-white">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Left Column */}
+    <div>
+      <h3 className="text-xl font-bold">Aditi Kala</h3>
+      <p className="mt-4 text-gray-400">
+        Full Stack Developer passionate about solving complex problems and creating innovative solutions.
+        Building software applications with modern technologies.
+      </p>
+      <div className="flex space-x-4 mt-4">
+        {/* Update links for your social profiles */}
+        <a
+          href="#"
+          className="social-icon w-10 h-10 bg-[#1A1A1B] rounded-lg flex items-center justify-center"
+        >
+          <Github className="w-5 h-5" />
+        </a>
+        <a
+          href="#"
+          className="social-icon w-10 h-10 bg-[#1A1A1B] rounded-lg flex items-center justify-center"
+        >
+          <Linkedin className="w-5 h-5" />
+        </a>
+        <a
+          href="#"
+          className="social-icon w-10 h-10 bg-[#1A1A1B] rounded-lg flex items-center justify-center"
+        >
+          <Instagram className="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+
+    {/* Middle Column */}
+    <div>
+      <h3 className="text-xl font-bold">Quick Links</h3>
+      <ul className="mt-4 space-y-2 text-gray-400">
+        <li>
+          <a href="#about" className="hover:text-purple-400 transition-colors">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#skills" className="hover:text-purple-400 transition-colors">
+            Skills
+          </a>
+        </li>
+        <li>
+          <a
+            href="#experience"
+            className="hover:text-purple-400 transition-colors"
+          >
+            Experience
+          </a>
+        </li>
+        <li>
+          <a href="#projects" className="hover:text-purple-400 transition-colors">
+            Projects
+          </a>
+        </li>
+        <li>
+          <a href="#contact" className="hover:text-purple-400 transition-colors">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    {/* Right Column */}
+    <div>
+      <h3 className="text-xl font-bold">Contact Info</h3>
+      <p className="mt-4 text-gray-400">
+        New York, USA
+        <br />
+        smituplenchwar02@gmail.com
+      </p>
+      <a
+        href="https://drive.google.com/file/d/1ea5yCsHC2bAHnhvOkjENUMZaIuighlpg/view?usp=sharing"
+        className="mt-4 inline-block px-4 py-2 bg-purple-600 text-white rounded 
+                   hover:bg-purple-700 transition-colors"
+      >
+        Download Resume
+      </a>
+    </div>
+  </div>
+
+  <div className="border-t border-gray-800 mt-8 pt-4 text-center text-gray-400 text-sm">
+    © 2025 Smit Uplenchwar. All rights reserved.
+  </div>
+</footer>
     </div>
   );
 }
