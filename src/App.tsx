@@ -679,11 +679,11 @@ function App() {
       </section>
 
       {/* Footer Section */}
-<footer className="py-10 px-4 bg-[#0D0D0E] text-white">
+<footer className="mt-20 py-10 px-4 bg-[#111111] text-white border-t border-gray-800">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
     {/* Left Column */}
     <div>
-      <h3 className="text-xl font-bold">Aditi Kala</h3>
+      <h3 className="text-xl font-bold">Smit Uplenchwar</h3>
       <p className="mt-4 text-gray-400">
         Full Stack Developer passionate about solving complex problems and creating innovative solutions.
         Building software applications with modern technologies.
@@ -753,6 +753,8 @@ function App() {
         New York, USA
         <br />
         smituplenchwar02@gmail.com
+        <br />
+        +1 (716)-339-4309
       </p>
       <a
         href="https://drive.google.com/file/d/1ea5yCsHC2bAHnhvOkjENUMZaIuighlpg/view?usp=sharing"
