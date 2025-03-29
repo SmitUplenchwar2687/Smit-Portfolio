@@ -152,7 +152,7 @@ function App() {
   className="pt-32 pb-20 px-4"
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
+  transition={{ duration: 1.5 }}
 >
   <div className="max-w-7xl mx-auto">
     <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -160,7 +160,7 @@ function App() {
         className="flex-1"
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.5 }}
       >
         <div className="inline-block px-4 py-2 rounded-full bg-[#1A1A1B] mb-6 hover:bg-purple-500/10 transition-colors duration-300">
           <span className="flex items-center text-sm">
@@ -202,7 +202,7 @@ function App() {
         className="flex-1 relative"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.5 }}
       >
         <div className="w-full aspect-square rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
           <img
