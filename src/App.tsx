@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 import { 
   Github, 
   Linkedin, 
@@ -146,51 +147,74 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4" id="about">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="flex-1">
-              <div className="inline-block px-4 py-2 rounded-full bg-[#1A1A1B] mb-6 hover:bg-purple-500/10 transition-colors duration-300">
-                <span className="flex items-center text-sm">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                  Available for new projects
-                </span>
-              </div>
-              <h1 className="text-5xl font-bold mb-4">
-                Smit <span className="text-purple-400">Uplenchwar</span>
-              </h1>
-              <h2 className="text-2xl mb-6">
-                <span className="text-purple-400">Full Stack Developer</span>
-              </h2>
-              <p className="text-gray-400 mb-8">
-                I'm a Software Development Engineer with over 2 years of experience working on large-scale and distributed systems, I have a strong foundation in designing, developing and deploying complex software applications that can handle high traffic and large datasets. I am passionate about solving complex problems and creating innovative solutions, , I love the process of turning ideas into reality through technology.
-              </p>
-              <div className="flex gap-4">
-                <button className="primary-button px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 flex items-center">
-                  View Projects <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
-                <a
-                  href="https://drive.google.com/file/d/1ea5yCsHC2bAHnhvOkjENUMZaIuighlpg/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="primary-button px-6 py-3 border border-gray-700 rounded-lg hover:bg-gray-800 inline-block text-center"
-                    >
-                    Resume
-                </a>
-              </div>
-            </div>
-            <div className="flex-1 relative">
-              <div className="w-full aspect-square rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
-                <img 
-                  src="https://res.cloudinary.com/dninix0mh/image/upload/f_auto,c_fill,q_auto:best,w_800/v1743196850/WhatsApp_Image_2025-03-28_at_11.12.10_AM_iljl3u.jpg"
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+      <motion.section
+  id="about"
+  className="pt-32 pb-20 px-4"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="max-w-7xl mx-auto">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+      <motion.div
+        className="flex-1"
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="inline-block px-4 py-2 rounded-full bg-[#1A1A1B] mb-6 hover:bg-purple-500/10 transition-colors duration-300">
+          <span className="flex items-center text-sm">
+            <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+            Available for new projects
+          </span>
         </div>
-      </section>
+        <h1 className="text-5xl font-bold mb-4">
+          Smit <span className="text-purple-400">Uplenchwar</span>
+        </h1>
+        <h2 className="text-2xl mb-6">
+          <span className="text-purple-400">Full Stack Developer</span>
+        </h2>
+        <p className="text-gray-400 mb-8">
+          I'm a Software Development Engineer with over 2 years of experience
+          working on large-scale and distributed systems. I have a strong 
+          foundation in designing, developing, and deploying complex software 
+          applications that can handle high traffic and large datasets. I am 
+          passionate about solving complex problems and creating innovative 
+          solutions—I love the process of turning ideas into reality through 
+          technology.
+        </p>
+        <div className="flex gap-4">
+          <button className="primary-button px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 flex items-center">
+            View Projects <ArrowRight className="ml-2 w-4 h-4" />
+          </button>
+          <a
+            href="https://drive.google.com/file/d/1ea5yCsHC2bAHnhvOkjENUMZaIuighlpg/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primary-button px-6 py-3 border border-gray-700 rounded-lg hover:bg-gray-800 inline-block text-center"
+          >
+            Resume
+          </a>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="flex-1 relative"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="w-full aspect-square rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+          <img
+            src="https://res.cloudinary.com/dninix0mh/image/upload/f_auto,c_fill,q_auto:best,w_800/v1743196850/WhatsApp_Image_2025-03-28_at_11.12.10_AM_iljl3u.jpg"
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</motion.section>
 
       {/* Core Competencies */}
       <section className="py-20 px-4 bg-[#0D0D0E]">
