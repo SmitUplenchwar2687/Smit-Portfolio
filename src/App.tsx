@@ -193,9 +193,6 @@ function App() {
           technology.
         </p>
         <div className="flex gap-4">
-          <button className="primary-button px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 flex items-center">
-            View Projects <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
           <a
             href="https://drive.google.com/file/d/1ea5yCsHC2bAHnhvOkjENUMZaIuighlpg/view?usp=sharing"
             target="_blank"
