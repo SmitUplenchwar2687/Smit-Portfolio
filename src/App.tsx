@@ -27,7 +27,6 @@ import {
   SiTypescript,  
   SiNextdotjs,
   SiGo,
-  SiJava,
   SiMongodb,
   SiPostgresql,
   SiMysql,
@@ -38,6 +37,11 @@ import {
   SiKubernetes, 
   SiApachekafka 
 } from 'react-icons/si';
+
+import { 
+  DiJava
+ } from 'react-icons/di';
+
 
 function TechCard({ icon: Icon, name, color }: { icon: React.ElementType; name: string; color: string }) {
   return (
@@ -384,7 +388,7 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <TechCard icon={SiJava} name="Java" color="text-[#007396]" />
+            <TechCard icon={DiJava} name="Java" color="text-[#007396]" />
           </motion.div>
         </div>
       </motion.div>
