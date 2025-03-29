@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { 
   Github, 
   Linkedin, 
@@ -22,8 +23,7 @@ import {
   FaPython 
 } from 'react-icons/fa';
 import { 
-  SiTypescript, 
-  SiTailwindcss, 
+  SiTypescript,  
   SiFastapi, 
   SiFlask,
   SiMongodb,
@@ -50,11 +50,71 @@ function App() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState({
+    submitting: false,
+    error: null as string | null,
+    success: false
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatus({
+        submitting: false,
+        error: 'Please fill in all fields',
+        success: false
+      });
+      return;
+    }
+
+    setStatus({ submitting: true, error: null, success: false });
+
+    try {
+      await emailjs.send(
+        'service_u07jwii', 
+        'template_gf9hvtr', 
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'smituplenchwar12@gmail.com'
+        },
+        'mY4T4uoObLyDBbplY' 
+      );
+
+      setStatus({
+        submitting: false,
+        error: null,
+        success: true
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+      setTimeout(() => {
+        setStatus(prev => ({ ...prev, success: false }));
+      }, 5000);
+
+    } catch (error) {
+      setStatus({
+        submitting: false,
+        error: 'Failed to send message. Please try again.',
+        success: false
+      });
+    }
   };
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle form submission
+  //   console.log(formData);
+  // };
 
   return (
     <div className="min-h-screen bg-[#0A0A0B] text-white">
@@ -177,7 +237,6 @@ function App() {
                 <TechCard icon={FaJs} name="JavaScript" color="text-[#F7DF1E]" />
                 <TechCard icon={SiTypescript} name="TypeScript" color="text-[#3178C6]" />
                 <TechCard icon={SiAngular} name="Angular" color="text-[#DD0031]" />
-                <TechCard icon={SiTailwindcss} name="Tailwind CSS" color="text-[#06B6D4]" />
               </div>
             </div>
 
@@ -212,137 +271,7 @@ function App() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 px-4 bg-[#0D0D0E]" id="projects">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-purple-400 text-sm uppercase tracking-wider">MY WORK</span>
-            <h2 className="text-4xl font-bold mt-2">Featured Projects</h2>
-            <p className="text-gray-400 mt-4">A collection of projects that showcase my skills and experience in building digital products.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Project 1 */}
-            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
-              <div className="overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-                  alt="A2K Financial Advisory"
-                  className="project-image w-full h-48 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">A2K Financial Advisory</h3>
-                <p className="text-gray-400 mb-4">An AI-powered financial advisory platform offering spending insights, savings projections, and chatbot-driven advice.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MERN Stack</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Git</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Google Gemini</span>
-                </div>
-                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
-                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
-              <div className="overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800"
-                  alt="Donezo"
-                  className="project-image w-full h-48 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Donezo</h3>
-                <p className="text-gray-400 mb-4">A full-stack collaborative task management platform with role-based access control.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MERN Stack</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Git</span>
-                </div>
-                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
-                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
-              <div className="overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1537884944318-390069bb8665?auto=format&fit=crop&q=80&w=800"
-                  alt="FormUp"
-                  className="project-image w-full h-48 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">FormUp - Form Builder</h3>
-                <p className="text-gray-400 mb-4">A drag-and-drop form builder for creating dynamic, customizable forms with real-time preview.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Next.js</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Dnd-Kit</span>
-                </div>
-                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
-                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Work Experience */}
-      {/* <section className="py-20 px-4" id="experience">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-purple-400 text-sm uppercase tracking-wider">MY JOURNEY</span>
-            <h2 className="text-4xl font-bold mt-2">Work Experience</h2>
-            <p className="text-gray-400 mt-4">A timeline of my professional experience and the skills I've developed along the way.</p>
-          </div>
-
-          <div className="space-y-8">
-            <div className="flex gap-6">
-              <div className="w-12 h-12 bg-purple-400/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Building2 className="w-6 h-6 text-purple-400" />
-              </div>
-              <div className="experience-card bg-[#1A1A1B] p-6 rounded-xl border border-gray-800 flex-1">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold">Python Developer Intern</h3>
-                    <p className="text-gray-400">ThirdEye AI (A JBM Group Company)</p>
-                  </div>
-                  <span className="text-sm text-purple-400">Dec-2024 to January-2025</span>
-                </div>
-                <ul className="space-y-3 text-gray-400">
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mt-2"></span>
-                    <span>Developed a robust RESTful API with Flask for systematic time series analysis, delivering insights that resolved key performance bottlenecks.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mt-2"></span>
-                    <span>Worked on a shoplifting detection system leveraging action recognition techniques to identify suspicious behaviors in real-time.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mt-2"></span>
-                    <span>Created and optimized a real-time push notification system to alert clients when a vehicle enters a designated area.</span>
-                  </li>
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Flask</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">PyTorch</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">OpenCV</span>
-                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MongoDB</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Work Experience */}
+       {/* Work Experience */}
 <section className="py-20 px-4" id="experience">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12">
@@ -522,6 +451,88 @@ function App() {
 </section>
 
 
+      {/* Featured Projects */}
+      <section className="py-20 px-4 bg-[#0D0D0E]" id="projects">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-purple-400 text-sm uppercase tracking-wider">MY WORK</span>
+            <h2 className="text-4xl font-bold mt-2">Featured Projects</h2>
+            <p className="text-gray-400 mt-4">A collection of projects that showcase my skills and experience in building digital products.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Project 1 */}
+            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
+              <div className="overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                  alt="A2K Financial Advisory"
+                  className="project-image w-full h-48 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">A2K Financial Advisory</h3>
+                <p className="text-gray-400 mb-4">An AI-powered financial advisory platform offering spending insights, savings projections, and chatbot-driven advice.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MERN Stack</span>
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Git</span>
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Google Gemini</span>
+                </div>
+                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
+                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
+              <div className="overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800"
+                  alt="Donezo"
+                  className="project-image w-full h-48 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Donezo</h3>
+                <p className="text-gray-400 mb-4">A full-stack collaborative task management platform with role-based access control.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">MERN Stack</span>
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Git</span>
+                </div>
+                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
+                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="project-card bg-[#1A1A1B] rounded-xl overflow-hidden border border-gray-800">
+              <div className="overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1537884944318-390069bb8665?auto=format&fit=crop&q=80&w=800"
+                  alt="FormUp"
+                  className="project-image w-full h-48 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">FormUp - Form Builder</h3>
+                <p className="text-gray-400 mb-4">A drag-and-drop form builder for creating dynamic, customizable forms with real-time preview.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Next.js</span>
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
+                  <span className="skill-tag px-3 py-1 bg-gray-800 rounded-full text-sm">Dnd-Kit</span>
+                </div>
+                <a href="#" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2 group">
+                  View Project <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Contact Section */}
       <section className="py-20 px-4 bg-[#0D0D0E]" id="contact">
         <div className="max-w-7xl mx-auto">
@@ -555,7 +566,7 @@ function App() {
                   </div>
                   <div>
                     <p className="font-semibold">Phone</p>
-                    <p className="text-gray-400">Available upon request</p>
+                    <p className="text-gray-400">+1 (716)-339-4309</p>
                   </div>
                 </div>
 
@@ -573,13 +584,13 @@ function App() {
               <div className="mt-8">
                 <h4 className="font-semibold mb-4">Follow Me</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
+                  <a href="https://github.com/SmitUplenchwar2687" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
                     <Github className="w-6 h-6" />
                   </a>
-                  <a href="#" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
+                  <a href="https://www.linkedin.com/in/smit-uplenchwar-41b473219/" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
                     <Linkedin className="w-6 h-6" />
                   </a>
-                  <a href="#" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
+                  <a href="https://www.instagram.com/smit2687_/" className="social-icon w-12 h-12 bg-[#1A1A1B] rounded-lg flex items-center justify-center">
                     <Instagram className="w-6 h-6" />
                   </a>
                 </div>
@@ -635,12 +646,27 @@ function App() {
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="primary-button w-full py-3 bg-purple-600 rounded-lg hover:bg-purple-700"
-                >
-                  Send Message
-                </button>
+
+                {status.error && (
+          <div className="text-red-500 text-sm">{status.error}</div>
+        )}
+        
+        {status.success && (
+          <div className="text-green-500 text-sm">Message sent successfully!</div>
+        )}
+
+
+        <button
+          type="submit"
+          disabled={status.submitting}
+          className={`primary-button w-full py-3 bg-purple-600 rounded-lg ${
+            status.submitting 
+              ? 'opacity-50 cursor-not-allowed' 
+              : 'hover:bg-purple-700'
+          }`}
+        >
+          {status.submitting ? 'Sending...' : 'Send Message'}
+        </button>
               </form>
             </div>
           </div>
